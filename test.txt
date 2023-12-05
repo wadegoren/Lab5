@@ -1,1 +1,1 @@
-python test.py -b 1 -w ./model_weights.pth -test_set ./images/
+python test.py -b 1 -w ./model_weights.pth -test_set ./data/images/

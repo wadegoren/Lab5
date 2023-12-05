@@ -109,13 +109,12 @@ if __name__ == "__main__":
     parser.add_argument("-cuda", choices=("Y", "N"), default="Y", help="Use CUDA for training (Y/N)")
     args = parser.parse_args()
 
-    transform = transforms.Compose((
+    transform = transforms.Compose([
         transforms.Resize((400, 600)),  # Adjust size as needed
         transforms.RandomHorizontalFlip(),
         transforms.RandomRotation(15),
         transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),  # Adjust normalization
-    ))
+    ])
 
     train_set = CustomDataset(directory=args.train_set, transform=transform)
     resnet_model = resnet18(weights=None)
