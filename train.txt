@@ -1,0 +1,1 @@
+python train.py -e 80 -b 1 -s ./model_weights.pth -train_set ./data/images/
